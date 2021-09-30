@@ -1,10 +1,24 @@
-#include<stdio.h>
+#include <stdio.h>
+ 
+int fact(int);
+ 
 void main()
 {
-    int i, n, f=1;
-    printf("Enter no. of which factorial is to be calculated\n");
-    scanf("%d",&n);
+ int no,factorial;
+ 
+  	printf("Enter a number to calculate it's factorial\n");
+  	scanf("%d",&no);
+  	factorial=fact(no);
+    printf("Factorial of the num(%d) = %d\n",no,factorial);
+//printf("Factorial of the num(%d) = %d\n",no,fact(no));//another way of calling a function//comment above two lines if you want to use this
+}
+ 
+int fact(int n)
+{
+    int i,f=1;
     for(i=1;i<=n;i++)
-        f*=i;
-    printf("The factorial of %d is %d ",n,f);
+    {
+        f=f*i;
+    }
+    return f;
 }
